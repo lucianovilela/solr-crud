@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  solr:
+    image: solr:8.11
+    container_name: solr
+    ports:
+      - '8983:8983'
+    volumes:
+      - solr_data:/var/solr
+    environment:
+      - SOLR_CORE=my_core
+    command:
+      - solr-precreate
+      - my_core
+
+  app:
+    build: ./app
+    container_name: node-app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - solr
+    environment:
+      - SOLR_URL=http://solr:8983/solr/my_core
+    volumes:
+      - ./app:/usr/src/app
+    command: npm start
+
+volumes:
+  solr_data:

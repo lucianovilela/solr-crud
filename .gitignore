@@ -1,0 +1,60 @@
+# .gitignore para projeto Node.js
+
+# Dependências
+node_modules/
+.pnp/
+.pnp.js
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build / artifacts
+dist/
+build/
+out/
+public/build/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.web-build/
+
+# Testes / cobertura
+coverage/
+.nyc_output/
+jest-cache/
+jest-junit.xml
+
+# Ambiente / segredos
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# Ferramentas / bundlers
+*.tsbuildinfo
+
+# Sistema / misc
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.pid
+*.seed
+*.tgz
+
+# IDEs / editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
